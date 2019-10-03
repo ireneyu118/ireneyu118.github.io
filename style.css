@@ -1,0 +1,178 @@
+body {
+  background-color: #EAE3D9;
+  background-image: url("bgimage.png");
+  background-size: 1000px 700px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+
+.grid-container {
+  display: inline-grid;
+}
+
+.header {
+  text-align: center;
+  color: #954229;
+  font-size: 30px;
+  font-family: "Avenir";
+  letter-spacing: 9px;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+.topnav {
+	text-align: center;
+	font-family: "Avenir";
+	color: #BE6E41;
+}
+
+.topnavbuns {
+  text-decoration: underline;
+}
+
+.hoverbuns:hover {
+  color: #954229;
+}
+
+.imagebun {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  box-shadow: 20px 20px #BE6E41;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: #954229;
+  font-family: "Avenir";
+  font-style: italic;
+  letter-spacing: 3px;
+}
+
+.textoverimage {
+  position: absolute;
+  top: 39px;
+  left: 250px;
+  font-size: 20px;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 500px;
+  height: 300px;
+  background-color: #D7BEA2;
+  opacity: 0.9;
+  border-radius: 4px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+ul li {
+  display: inline-block;
+  font-family: "Avenir";
+  letter-spacing: 2px;
+}
+
+ul li a {
+  padding: 10px 10px;
+}
+
+.logo img{
+  float: left;
+  width: 80px;
+  height: auto;
+}
+
+.bag {
+  width: 25px;
+  height: auto;
+}
+
+.content {
+  float: right ;
+  width: 80% ;
+}
+.navbar {
+  float: right;
+  width: 20%;
+}
+
+.bunflavors {
+  padding-left: 100px;
+  padding-top: 10px;
+  font-family: "Avenir";
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #954229;
+  font-weight: bold;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr;
+  padding-top: 40px;
+  padding-left: 100px;
+  padding-right: 60px;
+  grid-gap: 80px 50px;
+  font-family: "Avenir";
+  color: #69392B;
+  font-size: 20px;
+}
+
+
+.caramelpecan:hover {
+  color: #BE6E41;
+}
+
+.smallbunbun {
+  width: 65px;
+  height: auto;
+}
+
+.amt {
+  width: 70px;
+  height: auto;
+}
+
+.glaze {
+  width: 100px;
+  height: auto;
+}
+
+.addToBag {
+  padding-top: 20px;
+  padding-right: 65px;
+  width: 250px;
+  height: auto;
+  position: absolute;
+  right: 0px;
+}
+
+.bigbun {
+  width: 120px;
+  height: auto;
+  padding-left:20px;
+  padding-top: 20px;
+}
+
+.caramel {
+  font-family: Avenir;
+  font-size: 30px;
+  color: #51361D;
+}
