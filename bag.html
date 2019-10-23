@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BUN BUN ROLLS</title>
+   <link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">
+      <a href="index.html"><img src="logo.png"></a>
+    </div>
+    <div>
+     <a href="index.html">- BUN BUN ROLLS -</a>
+    </div>
+  </div>
+
+
+  <div class="topnav">
+      <ul>
+        <li>
+          <a>ABOUT</a>
+        </li>
+        <li class="topnavbuns">
+          <a href="product.html">BUNS</a>
+        </li>
+        <li>
+          <a>CONTACT</a>
+        </li>
+        <li>
+          <a href="bag.html">
+            <img src="darkbrownbag.png" class="bag">
+          </a>
+        </li>
+      </ul>
+  </div>
+  <!-- <div style="clear:right;"></div> -->
+
+<div class="bunflavors">
+  YOUR BROWN BAG
+</div>
+
+
+<div class="boxed">
+
+<div class="biglabel">
+<div class="label"> Flavor </div>
+<div class="label"> Price </div>
+<div class="label"> Qty </div>
+<div class="label"> Glaze </div>
+</div>
+
+<div class="line">______________________________________________________</div>
+
+<div class="productshopping">
+  <button class="x" type="button" onclick=";">x</button>
+  <img id ="image5" src="smallbunbun.png" class="smallbunbun">
+  <p>Walnut</p>
+  <p>$6</p>
+  <select class="select">
+    <option>3</option>
+    <option>1</option>
+    <option>3</option>
+    <option>6</option>
+    <option>9</option>
+  </select>
+  <select id="glazeselect5" class="select2" onchange="selectimage5()">
+    <option value="0">None</option>
+    <option value="1">None</option>
+    <option value="2">Sugar Milk</option>
+    <option value="3">Vanilla Milk</option>
+    <option value="4">Double Chocolate</option>
+  </select>
+  <p class= "finalprice">$18</p>
+</div>
+
+<div class="productshopping">
+  <button class="x" type="button" onclick=";">x</button>
+  <img id ="image6" src="vanillamilk.png" class="smallbunbun">
+  <p>Caramel Pecan</p>
+  <p>$6</p>
+  <select class="select">
+    <option>6</option>
+    <option>1</option>
+    <option>3</option>
+    <option>6</option>
+    <option>9</option>
+  </select>
+  <select id="glazeselect6" class="select2" onchange="selectimage6()">
+    <option value="0">Vanilla Milk</option>
+    <option value="1">None</option>
+    <option value="2">Sugar Milk</option>
+    <option value="3">Vanilla Milk</option>
+    <option value="4">Double Chocolate</option>
+  </select>
+  <p class= "finalprice">$36</p>
+</div>
+
+<div>
+<div class="total">$54</div>
+<div class="total">Total</div>
+</div>
+
+<button class="checkout" type="button">Check out</button>
+
+
+
+</div>
