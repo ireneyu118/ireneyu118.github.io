@@ -6,6 +6,8 @@
    <link rel = "stylesheet"
    type = "text/css"
    href = "style.css" />
+
+   <script src="buns.js"></script>
 </head>
 
 <body>
@@ -17,10 +19,11 @@
     <div>
      <a href="index.html">- BUN BUN ROLLS -</a>
     </div>
-  </div>
+</div> <!-- end header -->
 
 
-  <div class="topnav">
+<!-- navbar -->
+<div class="topnav">
       <ul>
         <li>
           <a>ABOUT</a>
@@ -31,54 +34,56 @@
         <li>
           <a>CONTACT</a>
         </li>
-        <li>
-          <a href="bag.html">
+        <li class="bagitem">
+          <a onclick="openCart()">
             <img src="darkbrownbag.png" class="bag">
           </a>
+          <svg id="bagno" height="20" width="20">
+            <circle cx="10" cy="10" r="10" fill="#954229"/>
+            <text x="5" y="16" fill="#EAE3D9">0</text>
+          </svg>
         </li>
       </ul>
-  </div>
+  </div><!-- end navbar -->
+
   <!-- <div style="clear:right;"></div> -->
 
 <div class="bunflavors">
   YOUR BROWN BAG
 </div>
 
+<!-- the item box -->
+<div class="boxed" id="itembox">
 
-<div class="boxed">
+  <!-- bag item labels -->
+  <div class="biglabel">
+    <div class="label"> Flavor </div>
+    <div class="label"> Price </div>
+    <div class="label"> Qty </div>
+    <div class="label"> Glaze </div>
+    
+  </div> <!-- end box  HEADER -->
+  <div class="line">
+      ____________________________________________________________
+    </div>
 
-<div class="biglabel">
-<div class="label"> Flavor </div>
-<div class="label"> Price </div>
-<div class="label"> Qty </div>
-<div class="label"> Glaze </div>
+  <!-- <div class="productshopping">
+    <button class="x" type="button" onclick=";">x</button>
+    <img id ="image5" src="smallbunbun.png" class="smallbunbun">
+    <p id="flavor1">Walnut</p>
+    <p id ="price5">$6</p>
+    <p id="cartItemQuantity">3</p>
+    <p id="glazeselect5">Vanilla</p>
+     
+    <p class= "finalprice">$18</p>
+  </div> <!-- end bag item 1 -->
+
 </div>
 
-<div class="line">______________________________________________________</div>
 
-<div class="productshopping">
-  <button class="x" type="button" onclick=";">x</button>
-  <img id ="image5" src="smallbunbun.png" class="smallbunbun">
-  <p>Walnut</p>
-  <p>$6</p>
-  <select class="select">
-    <option>3</option>
-    <option>1</option>
-    <option>3</option>
-    <option>6</option>
-    <option>9</option>
-  </select>
-  <select id="glazeselect5" class="select2" onchange="selectimage5()">
-    <option value="0">None</option>
-    <option value="1">None</option>
-    <option value="2">Sugar Milk</option>
-    <option value="3">Vanilla Milk</option>
-    <option value="4">Double Chocolate</option>
-  </select>
-  <p class= "finalprice">$18</p>
-</div>
 
-<div class="productshopping">
+
+<!-- <div class="productshopping">
   <button class="x" type="button" onclick=";">x</button>
   <img id ="image6" src="vanillamilk.png" class="smallbunbun">
   <p>Caramel Pecan</p>
@@ -98,15 +103,108 @@
     <option value="4">Double Chocolate</option>
   </select>
   <p class= "finalprice">$36</p>
-</div>
+</div> -->
 
 <div>
 <div class="total">$54</div>
 <div class="total">Total</div>
 </div>
 
-<button class="checkout" type="button">Check out</button>
+<button id="checkout_btn" class="checkout" type="button">Check out</button>
 
 
 
 </div>
+
+<script type="text/javascript">
+  
+  glazemap = ['Glaze','None', 'Sugar Milk', 'Vanilla Milk', 'Double Chocolate'];
+  qtymap = ['Qty', '1', '3' ,'6', '9'];
+
+  // map cart element
+
+  window.addEventListener('load', function(){
+    // console.log('in bag', localStorage.getItem('products'));
+    let product = [];
+
+    // get the item list
+   if(localStorage.getItem('products')){
+          product = JSON.parse(localStorage.getItem('products'));
+   }
+
+   // console.log(product.length);
+   let len = product.length;
+
+   for(let i = 0; i < len; i++){
+      var box = document.createElement("DIV");
+      box.className += " productshopping";
+
+
+      // create button
+      var butt = document.createElement("BUTTON");
+      butt.innerHTML = "x";
+      butt.id="but"+i;
+      butt.className="classbutton"
+      box.appendChild(butt);
+
+      // create image
+      var j =document.createElement("IMG");
+      j.src="./smallbunbun.png";
+      j.className="img-attr";
+      box.appendChild(j);
+
+      // create name tag
+      var x = document.createElement("P");
+      x.innerHTML = product[i].name;
+      box.appendChild(x);
+
+      // create name tag
+      var y = document.createElement("P");
+      y.innerHTML = "$"+product[i].price;
+      box.appendChild(y);
+
+      // create name tag
+      var z = document.createElement("P");
+      z.innerHTML = qtymap[product[i].count];
+      box.appendChild(z);
+
+      // create name tag
+      var m = document.createElement("P");
+      console.log(product[i].glazing);
+      m.innerHTML = glazemap[product[i].glaze];
+      box.appendChild(m);
+
+
+      // console.log(product[i].name);
+
+      document.getElementById("itembox").appendChild(box);
+   }
+
+
+
+    var removeCartItem = document.getElementsByClassName('classbutton')
+    console.log(removeCartItem)
+    for (var i = 0; i < removeCartItem.length; i++) {
+      var buttonx = removeCartItem[i]
+      buttonx.addEventListener('click', function(event){
+        var buttonxClicked = event.target
+        buttonxClicked.parentElement.remove()
+  })
+}
+
+ // let product = [];
+ //        products = JSON.parse(localStorage.getItem('products'));
+ //        products.pop(x);
+ //        localStorage.setItem('products', JSON.stringify(products));
+
+
+  // let x = document.getElementByld("box");
+  // x.style.display("none");
+
+
+}, false);
+
+
+</script>
+
+</body>

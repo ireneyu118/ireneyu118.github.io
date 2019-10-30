@@ -34,8 +34,13 @@ a{
   position: absolute;
   left: 25px;
   top: -3px;
+}
 
-
+#bagno{
+  display: none;
+  position: absolute;
+  left: 25px;
+  top: -3px;
 }
 
 .topnav {
@@ -339,19 +344,36 @@ ul li a {
   font-family: Avenir;
   color: #69392B;
   font-size: 16px;
-  padding: 20px;
-  padding-left: 20px;
-  margin-left: 30px;
+  /*padding: 20px;*/
+  padding-left: 110px;
+  margin-left: -20px;
   padding-bottom: -20px;
   margin-bottom: -20px;
 }
 
 .biglabel {
-  margin-left: 260px;
+  margin-left: 290px;
 }
 
 .line {
-  margin-left: 310px;
+  margin-left: 380px;
   color: #69392B;
 
 }
+
+button {
+  background-color: transparent; 
+  border: none;
+  color: #69392B;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin-right: 60px;
+}
+
+.img-attr{
+  width:65px;
+  height:65px;
+}
+
