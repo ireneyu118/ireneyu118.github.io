@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design for Good</title>
+	<link rel="stylesheet" href="test.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="navbar">
+	    <a href="#home">About</a>
+	    <a href="test.html">Concepts</a>
+	    <a href="homepage.html">Home</a>
+	 </div>
+
+	<div id="typed-strings">
+	  <p>biases</p>
+	  <p>people</p>
+	  <p>good</p>
+	</div>
+	<span id="typed" class="element"></span>
+
+	<div id="page_wrap">
+	<div class="banner">
+		<div class="typed_wrap">
+			<h1>Design for <span class="typed"></span></h1>
+		</div>
+	</div>
+	</div>
+
+	<div class="person">
+		<img src="person.png" style="border-radius: 20px;">
+	</div>
+
+
+	<!-- js -->
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+	<script type="text/javascript">
+ 	// import Typed from 'typed.js';
+
+	var typed = new Typed('.typed', {
+		stringsElement: '#typed-strings',
+		typeSpeed: 70,
+	  	strings: ['This is a JavaScript library', 'This is an ES6 module'],
+	  	smartBackspace: true, // Default value
+	  	backSpeed: 70,
+	  	loop: true,
+	  	loopCount: Infinity,
+	});
+</script>
+
+</body>
+</html>
+
+
+
+
+
