@@ -171,3 +171,8 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.person {
+  float: right;
+  padding-right: 120px;
+}
